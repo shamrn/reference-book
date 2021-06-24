@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <button onclick="document.location='{% url 'create_book' %}'" class="button">Создать справочник</button>
+        <h3 class="book-title">Cправочники</h3>
+        <ul>
+        {% for book in ref_books %}
+            <li class="book-link">
+                <div class="book-info">
+                    {% for item in book.version.all %}
+                    {% if item.is_active %}
+                     <h4>{{ item.name }}</h4>
+                    <p>Начало действия: {{ item.date }}</p>
+                    {% endif %}
+                    {% endfor %}
+                     <p>Кол-во версий: {{ book.version.count }}</p>
+                </div>
+                <div class="book-read">
+                    <button onclick="document.location='{% url 'version_book' book.pk %}'" class="button">Редактировать</button><br>
+                    <button onclick="document.location='{% url 'item_list' book.pk %}'" class="button">Элементы справочника</button>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+{% endblock %}

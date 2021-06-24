@@ -1,0 +1,78 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    color:black;
+    font-size: calc(.7rem + .7vw + .7vh);
+    font-family:Verdana;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.container{
+    margin:8vw 5vw 5vw 5vw;
+    padding-bottom:150px;
+    text-align:center;
+}
+
+
+.button{
+    border:none;
+    background: transparent;
+    margin-top:2vw;
+    padding:15px 20px 15px 20px;
+     border-radius:10px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(66, 184, 227, 0.4);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(66, 184, 227, 0.4);
+    box-shadow: 0px 5px 10px 2px rgba(66, 184, 227, 0.4);
+     cursor: pointer;
+}
+
+.button:hover{
+    box-shadow: 0px 0px transparent, 0px 5px 10px rgba(66, 184, 227, 0.25);
+    transform: translateY(5px);
+}
+
+.book-title{
+    margin-top:5vw;
+}
+
+.book-link{
+    display:flex;
+    text-align:center;
+    margin-top:2vw;
+    border:1px rgba(66, 184, 227, 0.4) solid;
+    border-radius:15px;
+}
+.book-info{
+    width:40%;
+    margin:auto;
+}
+.book-read{
+    width:40%;
+      margin:auto;
+}
+
+.activ-version{
+    color:rgb(66, 184, 227);
+}
+.no-activ-version:hover{
+    color:rgb(66, 184, 227);
+    cursor: pointer;
+}
+input[type="checkbox"]{
+    width:45px;
+     height:45px;
+}

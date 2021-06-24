@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <form action="." method="post">
+        {% for field in form %}
+            <strong>{{ field.label }}</strong>
+        {% if field.errors %}<br><br><strong>{{ field.errors }} {% endif %}</strong>
+            <p>{{ field }}</p>
+        <small>{{ field.help_text }}</small><br><br>
+        {% endfor %}
+        {% csrf_token %}
+        <input type="submit" value="Создать">
+    </form>
+
+
+{% endblock %}

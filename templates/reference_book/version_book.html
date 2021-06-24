@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div>
+        <h3>Версии справочника</h3>
+      {% for book in ref_books %}
+      <button onclick="document.location='{% url 'update_book' book.pk %}'" class="button">{{ book.version }}</button>
+    {% if book.is_active %}
+    <small class="activ-version">активная версия</small>
+    {% else %}
+    <a href="{% url 'activate_version_book' book_pk book.pk %}"><small class="no-activ-version">сделать активной</small></a>
+    {% endif %}
+     <br>
+      {% endfor %}
+      <button onclick="document.location='{% url 'new_version' book_pk %}'" class="button">Создать новую версию</button>
+  </div>
+{% endblock %}

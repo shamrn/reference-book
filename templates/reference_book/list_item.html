@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+
+      <button onclick="document.location='{% url 'create_item' book_pk %}'" class="button">Добавить элемент</button>
+        <h3>Элементы справочника</h3>
+      {% for item in items %}
+      <button onclick="document.location='{% url 'update_item' item.pk book_pk %}'" class="button">{{ item.code }}</button><br>
+      {% endfor %}
+
+  </div>
+
+{% endblock %}
